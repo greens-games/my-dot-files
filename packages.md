@@ -1,18 +1,19 @@
 ### To Install package manager
 ksnip
-nvclt
+nvim
 alacritty/ghostty
 feh
-i3/dwm/hyprland
+i3
 i3blocks
 
 
 ### To Install source
 aseprite
+gf2
 
 
 ### To Install tarball/appimage
 kenkufm
 obisidian
-seergdb
 brave/zen
+odin
