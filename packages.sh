@@ -2,14 +2,18 @@ if [[ $1 == arch ]]; then
 	package_manager="pacman"
 	install="-S"
 	check_remote="-Ss"
-	check_local="-Q"
 fi
 
 if [[ $1 == fedora ]]; then
 	package_manager="dnf"
 	install="install"
 	check_remote="search"
-	check_local="-Q"
+fi
+
+if [[ $1 == ubuntu ]]; then
+	package_manager="apt"
+	install="install"
+	check_remote="search"
 fi
 
 get() {
@@ -39,6 +43,7 @@ get alacritty
 get feh
 get i3
 get i3blocks
+get keepass2
 echo "installing Obsidian"
 wget https://github.com/obsidianmd/obsidian-releases/releases/download/v1.10.6/Obsidian-1.10.6.AppImage
 echo "installing Brave"
