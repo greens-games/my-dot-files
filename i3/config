@@ -45,8 +45,8 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec /home/goots/repos/alacritty/target/release/alacritty
-#bindsym $mod+Return exec alacritty
+#bindsym $mod+Return exec /home/goots/repos/alacritty/target/release/alacritty
+bindsym $mod+Return exec alacritty
 #bindsym $mod+Return exec kitty
 
 # kill focused window
@@ -204,7 +204,10 @@ bar {
 bindsym $mod+g exec rofi -show run
 bindsym $mod+Shift+m move scratchpad
 bindsym $mod+Shift+n scratchpad show
+bindsym $mod+Ctrl+n exec feh --bg-scale --randomize ~/wallpapers/n/
+bindsym $mod+n exec feh --bg-scale --randomize ~/wallpapers/s/
+
 
 default_border pixel 1
 exec picom -b
-exec feh --bg-fill --zoom fill -D 1.0 -z ~/Pictures/cat.jpg
+exec feh --bg-scale --randomize ~/wallpapers/s/*

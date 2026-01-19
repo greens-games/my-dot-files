@@ -1,9 +1,8 @@
-[general]
 import = [
 	"~/repos/alacritty-theme/themes/tokyo_night_enhanced.toml"
 ]
 
 [window]
-opacity= 0.6
+opacity= 0.96
 decorations = "Full"
-decorations_theme_variant = "Light" # "Dark"
+decorations_theme_variant = "Dark" # "Dark"
