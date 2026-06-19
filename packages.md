@@ -2,10 +2,11 @@
 ksnip
 nvim
 alacritty/ghostty
+keepass
 feh
-i3
-i3blocks
-
+hyprland OR i3 i3blocks
+nvidia drivers
+steam
 
 ### To Install source
 aseprite
@@ -17,3 +18,7 @@ kenkufm
 obisidian
 brave/zen
 odin
+zig
+fred
+discord
+renderDoc
