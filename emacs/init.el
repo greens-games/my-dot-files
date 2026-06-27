@@ -11,19 +11,15 @@
 							tab-width 2
 							make-backup-files nil)
 
-
-;; (setq treesit-language-source-alist
-;;       '((odin "https://github.com/tree-sitter-grammars/tree-sitter-odin")
-;; 	(c "https://github.com/tree-sitter-tree-sitter-c")))
-
 ;;Set up package.el to work with MELPA
-(require 'package)
+;; (require 'package)
 ;; (add-to-list 'package-archives
 ;;              '("melpa" . "https://melpa.org/packages/"))
-;; (add-to-list 'package-archives
+
+;; (package-refresh-contents)
+;;  (add-to-list 'package-archives
 ;;              (cons "nongnu" (format "http%s://elpa.nongnu.org/nongnu/"
 ;;                                     (if (gnutls-available-p) "s" ""))))
-;; (package-refresh-contents)
 
 ;; Download Evil
 (unless (package-installed-p 'evil)
@@ -37,38 +33,57 @@
 (evil-set-leader 'normal (kbd "SPC"))
 (evil-define-key 'normal 'global (kbd "<leader>sf") 'find-file)
 (evil-define-key 'normal 'global (kbd "<leader>c") 'compile)
-(evil-define-key 'normal 'global (kbd "<leader>[") 'insert-scope)
+;;NOTE: for some reason C-<key> removes M-x from being bound?
+(evil-define-key 'normal 'evil-normal-state-map (kbd "<leader>[") 'insert-scope)
 
 ;;IDO
  (unless (package-installed-p 'smex)
  	(package-install 'smex))
 (require 'smex)
 (global-set-key (kbd "M-x") 'smex)
-
 (ido-mode 1)
 (ido-everywhere 1)
 
+;;THEMES
 (load-theme 'base16-apathy t)
-
-;;Multi cursor
- (unless (package-installed-p 'multiple-cursors)
- 	(package-install 'multiple-cursors))
-(require 'multiple-cursors)
-(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
-(global-set-key (kbd "C->")         'mc/mark-next-like-this)
-(global-set-key (kbd "C-<")         'mc/mark-previous-like-this)
-(global-set-key (kbd "C-c C-<")     'mc/mark-all-like-this)
-(global-set-key (kbd "C-\"")        'mc/skip-to-next-like-this)
-(global-set-key (kbd "C-:")         'mc/skip-to-previous-like-this)
 ;; (use-package chocolate-theme
 ;;   :ensure t
 ;;   :config
 ;;   (load-theme 'chocolate t))
 
+;;LANGUAGES
 (require 'odin-mode)
 (require 'simpc-mode)
 (add-to-list 'auto-mode-alist '("\\.[hc]\\(pp\\)?\\'" . simpc-mode))
 
+;;LSPs
+(require 'eglot)
+(add-to-list 'eglot-server-programs
+ 						 '(odin-mode . ("/home/goots/tools/ols")))
+(add-hook 'odin-mode-hook #'eglot-ensure)
+(add-to-list 'eglot-server-programs
+						 '(simpc-mode . ("clangd")))
+(add-hook 'simpc-mode-hook #'eglot-ensure)
+(eldoc-mode)
+
+;;AUTO COMPLETION
+;(unless (package-installed-p 'corfu)
+; 	(package-install 'corfu))
+;(require 'corfu)
+;; (global-corfu-mode)
+;; (setq corfu-auto t
+;;       corfu-auto-delay 0.2
+;;       corfu-auto-trigger "." ;; Custom trigger characters
+;;       corfu-quit-no-match 'separator) ;; or t
+
+(unless (package-installed-p 'company)
+ 	(package-install 'company))
+(require 'company)
+(global-company-mode)
+(setq company-idle-delay 0.2)
+(setq company-inhibit-inside-symbols t)
+
+;;CUSTOM FUNCS
 (defun insert-scope ()
 	(interactive)
 	(insert "{")
