@@ -40,6 +40,7 @@ env_check failed_packages.txt
 get ksnip
 get nvim
 get alacritty
+get ghostty
 get feh
 get i3
 get i3blocks
@@ -48,5 +49,3 @@ echo "installing Obsidian"
 wget https://github.com/obsidianmd/obsidian-releases/releases/download/v1.10.6/Obsidian-1.10.6.AppImage
 echo "installing Brave"
 curl -fsS https://dl.brave.com/install.sh | sh
-echo "generating ssh key"
-ssh-keygen -t ed25519 -C "mgreen72194@gmail.com"
