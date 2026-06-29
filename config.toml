@@ -1,0 +1,263 @@
+[editor.colors]
+default_font_color = 0x795c3fff
+whitespace = 0xc8c09329
+carriage_return = 0xe82424ff
+search_result = 0xff9e3baa
+selection_color = 0x223249aa
+token_match = 0x54546daa
+active_line_number = 0xdcd7baff
+inactive_line_number = 0x54546dff
+line_number_sep = 0xdcd7baff
+line_ruler = 0xdcd7baff
+cursor = 0x11ff11ff
+tray = 0xdcd7baff
+need_save = 0xe82424ff
+background = 0xc0c0dff
+warning = 0xff9e3bff
+error = 0xe82424ff
+auto_line_ending = 0x6a9589ff
+vim_cursor_color = 0x11ff11ff
+async_highlight = 0x223249aa
+selected_editor = 0x938aa9ff
+line_guides = 0x16161d26
+active_line_guide = 0x363646ff
+highlight_line_copy = 0x76946aff
+highlight_line_edit = 0x54546dff
+
+[editor.state]
+show_line_numbers = true
+auto_syntax_highlighting = true
+auto_line_endings = true
+render_whitespace = true
+tabs_as_spaces = true
+spellcheck_by_default = false
+disable_line_highlight = false
+html_copy_background = true
+vim_mode = true
+suppress_async_search = false
+suppress_threaded_search = false
+suppress_suggestions = false
+modulate_color_glyphs = false
+embold_vim_cursor = true
+embold_cursor = false
+line_guides = true
+relative_numbering = false
+clear_find = false
+return_accept_suggestion = false
+show_line_rulers = false
+noisy_parse = false
+noisy_search = false
+noisy_events = false
+noisy_flattened_events = false
+noisy_find_all = false
+font_size_px = 12
+tray_font_size = 12
+tabstop = 4
+line_number_style = 'LineNumberStyle_Classic'
+line_rulers = [80]
+
+[[editor.highlights]]
+color = 0xc58600ff
+tags = ['keyword.directive',
+'keyword.directive.define',
+'keyword.directive.include',
+'macro.function',
+'macro.define',
+'macro.definition']
+
+[[editor.highlights]]
+color = 0xeef442ff
+tags = ['keyword.alloc',
+'keyword.return',
+'keyword.repeat',
+'keyword.conditional',
+'keyword.conditional.ternary',
+'keyword.exception',
+'keyword.coroutine',
+'keyword.coroutine.return']
+
+[[editor.highlights]]
+color = 0xc54488ff
+tags = ['keyword',
+'keyword.operator',
+'keyword.storage',
+'boolean',
+'function.builtin',
+'type.builtin',
+'type.qualifier',
+'tag']
+
+[[editor.highlights]]
+color = 0x569cd6ff
+tags = ['variable.builtin']
+
+[[editor.highlights]]
+color = 0xdc5500ff
+tags = ['function']
+
+[[editor.highlights]]
+color = 0xdc5500ff
+tags = ['function.call']
+
+[[editor.highlights]]
+color = 0xdc5500ff
+tags = ['function.method',
+'function.method.call']
+
+[[editor.highlights]]
+color = 0x22cc3388
+tags = ['type',
+'property']
+
+[[editor.highlights]]
+color = 0x817d82ff
+tags = ['attribute']
+
+[[editor.highlights]]
+color = 0xb5cea8ff
+tags = ['constant',
+'constant.builtin',
+'number']
+
+[[editor.highlights]]
+color = 0xce9178ff
+tags = ['string',
+'string.escape',
+'character']
+
+[[editor.highlights]]
+color = 0x99999955
+tags = ['comment']
+
+[[editor.highlights]]
+color = 0xe3000088
+tags = ['operator']
+
+[[editor.highlights]]
+color = 0x4ec9b0ff
+tags = ['scope.name']
+
+[[editor.highlights]]
+color = 0xf44747ff
+tags = ['embedded']
+
+[[editor.lang]]
+lang = "GLSL"
+c_func = "tree_sitter_glsl"
+query_src = "/home/goots/repos/tree-sitter-glsl/queries/highlights.scm"
+sources = ["/home/goots/repos/tree-sitter-glsl/src/parser.c"]
+extensions = [".glsl",
+".fs",
+".vs"]
+
+[[editor.lang]]
+lang = "c"
+c_func = "tree_sitter_c"
+query_src = "/home/goots/repos/tree-sitter-c/queries/highlights.scm"
+sources = ["/home/goots/repos/tree-sitter-c/src/parser.c"]
+extensions = [".c"]
+
+[diff.colors]
+del = 0xc34043ff
+ins = 0x76946aff
+eq = 0xdcd7baff
+trimmed_text = 0xdca561ff
+graph_link = 0xbd42b7ff
+selected_node_color = 0x658594ff
+last_save_node_color = 0x76946aff
+external_change_node_color = 0x363646ff
+
+[diff.state]
+diff_font_size = 12
+
+[file_explorer.colors]
+default_font_color = 0xdcd7baff
+relative_dir_font_color = 0x54546dff
+actively_rooted = 0x658594ff
+background = 0x16161dff
+selection_color = 0x2d4f67aa
+match_color = 0xff9e3bff
+directory_color = 0x6a9589ff
+unknown_color = 0xe82424ff
+B_color = 0xdcd7baff
+KB_color = 0x6a9589ff
+MB_color = 0x2d4f67ff
+GB_color = 0x54546dff
+TB_color = 0xc34043ff
+PB_color = 0xc34043ff
+EB_color = 0xc34043ff
+
+[file_explorer.state]
+font_size = 12
+noisy_dir_root = false
+rooted_filters = ""
+
+[feed.colors]
+info = 0xdcd7baff
+warning = 0xff9e3bff
+error = 0xe82424ff
+
+[feed.state]
+feed_font_size = 12
+
+[widget.colors]
+window_border = 0x363646aa
+window_title_background = 0x2a2a37aa
+window_title_font_color = 0xdcd7baff
+window_close_button_hover = 0xc34043ff
+window_close_button_pressed = 0x43242bff
+scrollbar_inactive = 0x363646aa
+scrollbar_active = 0x363646ff
+scrollbar_track_outline = 0x363646aa
+custom_hotkey_fill = 0x2d4f6731
+drag_drop_zone = 0x54546dff
+outline_selection = 0x54546dff
+warning = 0xff9e3bff
+error = 0xe82424ff
+active_button = 0x363646ff
+loading_bar_progress = 0x76946aff
+loading_bar_complete = 0x658594ff
+active_tab_highlight = 0x6a9589ff
+active_selection = 0x6a9589ff
+
+[widget.state]
+window_title_font_size = 12
+scrollbar_width = 10
+scrollbar_min_size = 20
+
+[system.core]
+preferred_file_explorer = ''
+core_window_rect = [2, 18, 956, 1041]
+async_update_frequency_ms = 1000
+editor_theme = 'ColorTheme_DarkKanagawa'
+fullscreen = false
+maximized = false
+disable_sessions = false
+noisy_session_info = false
+
+[system.fonts]
+fallback_fonts_folder = '/usr/share/fonts'
+current_font = ''
+
+[system.effects]
+audio_keystroke = []
+audio_return = []
+postprocessing_enabled = true
+screen_warp = true
+multipass_crt = true
+mute_audio = false
+suppress_audio_startup = true
+crt_mode = false
+animate_cursor = true
+light_mode = false
+smooth_scroll = true
+highlight_line_copy = true
+highlight_line_edit = true
+subpixel_font_aa = false
+
+[hotkey.state]
+hotkeys = '/home/goots/.cadacama/fred/hotkeys.toml'
+
+[plugins.core]
+plugins_source_file = '/home/goots/tools/fred/plugin.c'
+gen_base_template_only = false
