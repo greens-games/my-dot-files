@@ -1,3 +1,7 @@
+;;Missing/TODO
+;;Change odin indentation to width of 2
+;;    Do we want to use LSP? If not then we need to figure out auto complete and projects
+;;Try out tree-sitter modes instead of just base odin-mode
 (setq custom-file "~/.config/emacs/custom.el")
 (package-initialize)
 (add-to-list 'load-path "~/.config/emacs/modes/")
@@ -5,7 +9,7 @@
 (tool-bar-mode 0)
 (global-display-line-numbers-mode 1)
 (setq display-line-numbers-type 'relative)
-(setq js-indent-line 2)
+(global-auto-revert-mode 1)
 
 (setq-default inhibit-splash-screen t
 							tab-width 2
@@ -34,7 +38,8 @@
 (evil-define-key 'normal 'global (kbd "<leader>sf") 'find-file)
 (evil-define-key 'normal 'global (kbd "<leader>c") 'compile)
 ;;NOTE: for some reason C-<key> removes M-x from being bound?
-(evil-define-key 'normal 'evil-normal-state-map (kbd "<leader>[") 'insert-scope)
+(evil-define-key 'normal 'global (kbd "<C-{>") 'insert-scope)
+
 
 ;;IDO
  (unless (package-installed-p 'smex)
@@ -42,10 +47,10 @@
 (require 'smex)
 (global-set-key (kbd "M-x") 'smex)
 (ido-mode 1)
-(ido-everywhere 1)
+;;(ido-everywhere 1)
 
 ;;THEMES
-(load-theme 'base16-apathy t)
+(load-theme 'base16-atelier-seaside t)
 ;; (use-package chocolate-theme
 ;;   :ensure t
 ;;   :config
@@ -53,6 +58,7 @@
 
 ;;LANGUAGES
 (require 'odin-mode)
+(setq js-indent-line 2)
 (require 'simpc-mode)
 (add-to-list 'auto-mode-alist '("\\.[hc]\\(pp\\)?\\'" . simpc-mode))
 
@@ -83,6 +89,9 @@
 (setq company-idle-delay 0.2)
 (setq company-inhibit-inside-symbols t)
 
+(unless (package-installed-p 'org)
+ 	(package-install 'org))
+(require 'org)
 ;;CUSTOM FUNCS
 (defun insert-scope ()
 	(interactive)
