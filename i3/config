@@ -46,7 +46,8 @@ floating_modifier $mod
 
 # start a terminal
 #bindsym $mod+Return exec /home/goots/repos/alacritty/target/release/alacritty
-bindsym $mod+Return exec alacritty
+#bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec ghostty
 #bindsym $mod+Return exec kitty
 
 # kill focused window
@@ -62,10 +63,10 @@ bindsym $mod+d exec --no-startup-id dmenu_run
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+#bindsym $mod+j focus left
+#bindsym $mod+k focus down
+#bindsym $mod+l focus up
+#bindsym $mod+semicolon focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -74,10 +75,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -92,12 +93,12 @@ bindsym $mod+h split h
 bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+t layout tabbed
+bindsym $mod+l layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -206,8 +207,19 @@ bindsym $mod+Shift+m move scratchpad
 bindsym $mod+Shift+n scratchpad show
 bindsym $mod+Ctrl+n exec feh --bg-scale --randomize ~/wallpapers/n/
 bindsym $mod+n exec feh --bg-scale --randomize ~/wallpapers/s/
+bindsym $mod+e exec /home/goots/tools/fred/fred-linux
+bindsym $mod+p exec /home/goots/tools/prompt
+#bindsym $mod+f exec emacs
 
+for_window [title="Game Name Jam"] floating enable
+for_window [title="Text Edit"] floating enable
+for_window [title="fps_test"] floating enable
+for_window [title="handmade_client"] floating enable
+for_window [title="game2_game"] floating enable
+for_window [title="bouncing_balls_game"] floating enable
+for_window [title="load_test_game"] floating enable
+for_window [title="raylib_test_game"] floating enable
 
-default_border pixel 1
+default_border normal
 exec picom -b
 exec feh --bg-scale --randomize ~/wallpapers/s/*
